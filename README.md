@@ -19,6 +19,6 @@ from py_send_m365 import M365Mail
 mailer = M365Mail("myuser@domain.com", "mypassword", host="smtp.example.com", port=587)
 
 # Send an email
-mailer.send_mail("recipient@domain.com", "My Subject", "The message body")
+mailer.send_mail("recipient@domain.com", "My Subject", "The html <br><i>message</i> body")
 
 

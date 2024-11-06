@@ -1,0 +1,1 @@
+from .m365_mail import M365Mail

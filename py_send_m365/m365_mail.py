@@ -26,7 +26,10 @@ class M365Mail:
     def send_mail(self, mail_to, subject, msg):
         if msg is None:
             msg = self.default_msg
-            
+
+        if isinstance(mail_to, list):
+            mail_to = ", ".join(mail_to)
+
         mimemsg = MIMEMultipart()
         mimemsg['From']=self.mail_from
         mimemsg['To']=mail_to

@@ -2,7 +2,7 @@
 
 This module provides a simple way to send emails via Microsoft 365. You need a valid Microsoft 365 username (email address) and password.
 
-The `send_mail` method is used to send an email to any recipient.
+The `send_mail` method is used to send an email to any recipient. You can also pass a list of recipients here ["recipient1@example.com", "recipient2@example.com"]
 
 The host defaults to `smtp.office365.com`, and the port defaults to `587`, but you can specify your own in the constructor if needed.
 

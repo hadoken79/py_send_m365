@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='py_send_m365',
-    version='0.1.4',
+    version='0.1.5',
     author='hadoken',
     author_email='hadoken79@protonmail.com',
     description='A simple library to send email from an existing M365 account in Python',
@@ -24,4 +24,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    keywords="email M365 Microsoft SMTP Python",
 )

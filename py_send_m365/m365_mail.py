@@ -5,14 +5,17 @@ from email.mime.text import MIMEText
 
 class M365Mail:
 
-    default_msg = (
-    "No message provided...\n"
-    "Gathered infos:\n"
-    "Host: {host}\n"
-    "User: {user}"
-    ).format(host=socket.gethostname(), user=pwd.getpwuid(os.geteuid())[0])
-    host = 'smtp.office365.com'
-    port = 587
+    try:
+        default_msg = (
+        "No message provided...\n"
+        "Gathered infos:\n"
+        "Host: {host}\n"
+        "User: {user}"
+        ).format(host=socket.gethostname(), user=pwd.getpwuid(os.geteuid())[0])
+        host = 'smtp.office365.com'
+        port = 587
+    except Exception as e:
+        default_msg = f"No message provided Error gathering host/user info: {e}"
 
 
     def __init__(self, user, password, host=host, port=port):

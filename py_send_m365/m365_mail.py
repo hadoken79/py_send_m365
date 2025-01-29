@@ -26,15 +26,17 @@ class M365Mail:
         self.mail_from = user
 
 
-    def send_mail(self, mail_to, subject, msg):
+    def send_mail(self, mail_to, subject, msg, from_email=None):
         if msg is None:
             msg = self.default_msg
 
         if isinstance(mail_to, list):
             mail_to = ", ".join(mail_to)
+            
+        from_email = from_email or self.mail_from
 
         mimemsg = MIMEMultipart()
-        mimemsg['From']=self.mail_from
+        mimemsg['From']=from_email
         mimemsg['To']=mail_to
         mimemsg['Subject']=subject
         mimemsg.attach(MIMEText(msg, 'html'))

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py_send_m365"
+version = "0.2.0"
+authors = [
+    { name = "Linus Pauls", email = "hadoken79@protonmail.com" }
+]
+description = "A simple library to send email from an existing M365 account in Python"
+readme = "README.md"
+requires-python = ">=3.6"
+license = { text = "MIT" }
+keywords = ["email", "M365", "Microsoft", "SMTP", "Python"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/hadoken79/py_send_m365"
+"Bug Tracker" = "https://github.com/hadoken79/py_send_m365/issues"
+
+[tool.setuptools.packages.find]
+include = ["py_send_m365*"]

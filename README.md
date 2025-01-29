@@ -8,17 +8,20 @@ The host defaults to `smtp.office365.com`, and the port defaults to `587`, but y
 
 #### Usage
 
-Install via pip:
-
-    pip install git+https://github.com/hadoken79/py_send_m365.git
-
-```python
 from py_send_m365 import M365Mail
 
-# Create an instance, providing optional host and port if needed
-mailer = M365Mail("myuser@domain.com", "mypassword", host="smtp.example.com", port=587)
+## Create an instance, providing optional host and port if needed
 
-# Send an email
-mailer.send_mail("recipient@domain.com", "My Subject", "The html <br><i>message</i> body")
+    mailer = M365Mail("myuser@domain.com", "mypassword", host="smtp.example.com", port=587)
+
+## Send an email
+
+    mailer.send_mail("recipient@domain.com", "My Subject", "The html <br><i>message</i> body")
+
+## Send as
+
+If you have allowed certain from addresses for your user in m365, you can send from one of those
+
+    mailer.send_mail("recipient@domain.com", "My Subject", "The html <br><i>message</i> body", "my-allowed-sender@domain.com")
 
 

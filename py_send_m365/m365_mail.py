@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import smtplib, os, socket, pwd
+from typing import Optional
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -26,17 +27,17 @@ class M365Mail:
         self.mail_from = user
 
 
-    def send_mail(self, mail_to, subject, msg, from_email=None):
+    def send_mail(self, mail_to: list | str, subject: str, msg: Optional[str] = None, mail_from: Optional[str] = None):
         if msg is None:
             msg = self.default_msg
 
         if isinstance(mail_to, list):
             mail_to = ", ".join(mail_to)
             
-        from_email = from_email or self.mail_from
+        sender = mail_from or self.mail_from
 
         mimemsg = MIMEMultipart()
-        mimemsg['From']=from_email
+        mimemsg['From']=sender
         mimemsg['To']=mail_to
         mimemsg['Subject']=subject
         mimemsg.attach(MIMEText(msg, 'html'))

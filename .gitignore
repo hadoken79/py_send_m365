@@ -1,5 +1,7 @@
 ENV
+.env
 test.py
 *.egg-info/
 dist/
 build/
+__pycache__
